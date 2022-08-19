@@ -1,0 +1,13 @@
+body{
+    background-image: url(background.jpeg);
+    background-size: cover;
+    }
+
+header{
+    margin-left: 45px;
+}
+
+.pokedex{
+    position: absolute;
+    top: 100px; ;
+}
