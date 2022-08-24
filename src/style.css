@@ -14,26 +14,40 @@ header{
     top: 100px; ;
 }
 
-/* main {
+.main {
     margin-left: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     padding:20px;
 
-}   */
-/* .card {
+} 
+.card {
     margin-left: 40px;
     width: 200px;
     height: 300px;
     border-radius: 40px;
     box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  } */
+  }
 
-  /* .card >img{
+.card >img{
     width: 100%;
     padding-top: 30px;  
-} */
+}
+
+.card > h2{
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    text-align: left;
+    padding-top: 0px;
+}
+
+.card > h3{
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    padding-top: 10px;  
+}
 
 /*  main {
 display: flex;
@@ -42,10 +56,3 @@ display: flex;
 }  */
 
 
-/* .card > h3{
-    color: white;
-    font-family: 'Rubik', sans-serif;
-    text-align: center;
-    padding-top: 10px;
-   
-} */
