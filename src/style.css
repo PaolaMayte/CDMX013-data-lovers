@@ -29,7 +29,7 @@ header{
 .card {
   background: linear-gradient(232.63deg, rgba(63, 62, 138, 0.7) -11.97%, rgba(169, 67, 171, 0.7) 100.56%);
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  /* background-image: pokebola.png; */
+  /* background-image:url('pokebola.png'); */
   width: 200px;
   height: 250px;
   border-radius: 5px;
@@ -82,8 +82,13 @@ nav {
     margin-left: 750px;
     margin-top: -130px;
 }
-.selected{
+
+#type{
     font-family: 'Press Start 2P', cursive;
-    color: white;
+    color: rgb(27, 26, 26);
+}
+#region{
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(27, 26, 26);
 }
 

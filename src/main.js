@@ -1,3 +1,4 @@
+import pokemon from './data/pokemon/pokemon.js'
 import allData from './data/pokemon/pokemon.js'
 const root = document.getElementById ('root')
 root.classList = 'displayStyle'
@@ -33,3 +34,13 @@ const generadorHTML=(pokemon)=>{
 }
 
 pokemons.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
+
+
+const pokemones= []
+const regionSelector = document.getElementById("region")
+num.forEach(oneRegion =>{
+    const option = document.createElement('option')
+    option.textContent = 'oneRegion';
+
+    regionSelector.appendChild (option)
+})
