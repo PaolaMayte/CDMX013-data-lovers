@@ -1,3 +1,7 @@
+
+import allData from './data/pokemon/pokemon.js'
+const root = document.getElementById ('root')
+root.classList = 'displayStyle'
 import data from './data/pokemon/pokemon.js'
 const main = document.getElementById ('main')
 main.classList.add('main')
@@ -14,6 +18,16 @@ const pokemons= data.pokemon
 // crear tarjetas para cada pokemon:
 const generadorHTML=(pokemon)=>{
     const div = document.createElement('div')
+
+    div.classList='card'
+
+    const img = document.createElement('img')
+    img.setAttribute('src',pokemon.img)
+    img.classList= 'pokemon'
+
+    const num = document.createElement('h3')
+    num.textContent = '#' + pokemon.num
+    num.classList='num'
     div.classList.add('card')
 
     const img = document.createElement('img')
@@ -24,11 +38,12 @@ const generadorHTML=(pokemon)=>{
     num.textContent = pokemon.num
     num.classList.add('card>h2')
 
+
     const name = document.createElement('h3')
     name.textContent = pokemon.name
     name.classList.add('card>h3')
     
-    div.append(img,name)
+    div.append(num,img,name)
     return div  
 }
 
