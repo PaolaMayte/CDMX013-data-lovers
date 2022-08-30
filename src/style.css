@@ -19,19 +19,17 @@ header{
 .displayStyle {
     width: 100%;
     margin-left: 50px;
-    
-.main {
-    margin-left: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 120px;
     padding:20px;
+
 }  
 
 .card {
   background: linear-gradient(232.63deg, rgba(63, 62, 138, 0.7) -11.97%, rgba(169, 67, 171, 0.7) 100.56%);
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  /* background-image: pokebola.png; */
+  background-image:url('pokebola.png');
   width: 200px;
   height: 250px;
   border-radius: 5px;
@@ -44,54 +42,21 @@ header{
 .pokemon {
     -webkit-transform: skew(25deg);
 }
-}  
 
-.card {
-  background: linear-gradient(232.63deg, rgba(63, 62, 138, 0.7) -11.97%, rgba(169, 67, 171, 0.7) 100.56%);
-  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  /* background-image:url('pokebola.png'); */
-  width: 200px;
-  height: 250px;
-  border-radius: 5px;
-  text-align: center;
-  -webkit-transform: skew(-25deg);
-  /* -moz-transform: skew(25deg);
-  -o-transform: skew(25deg);  */
-}
 
-.pokemon {
-    -webkit-transform: skew(25deg);
-}
 
 /* .card {
-
-} 
-.card {
     margin-left: 40px;
     width: 200px;
     height: 300px;
     border-radius: 40px;
     box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  }
+  } */
 
-.card >img{
+  /* .card >img{
     width: 100%;
     padding-top: 30px;  
-}
-
-.card > h2{
-    color: white;
-    font-family: 'Rubik', sans-serif;
-    text-align: left;
-    padding-top: 0px;
-}
-
-.card > h3{
-    color: white;
-    font-family: 'Rubik', sans-serif;
-    text-align: center;
-    padding-top: 10px;  
-}
+} */
 
  /* main {
 display: flex;
@@ -99,16 +64,6 @@ display: flex;
   margin: -0.5rem;
 }   */
 
- h3{
-    -webkit-transform: skew(25deg);
-    color: white;
-    font-family: 'Rubik', sans-serif; 
-} 
-
-.num {
-    text-align: left;
-    padding-left: 18px;
-}
 
  h3{
     -webkit-transform: skew(25deg);
@@ -137,13 +92,38 @@ nav {
     color: rgb(27, 26, 26);
 }
 
-nav {
-    display: flex;
-    position:absolute;
-    margin-left: 750px;
-    margin-top: -130px;
+#type{
+    font-family: 'Press Start 2P', cursive;
+    color:white;
 }
-.selected{
+#region{
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
+
+.select {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 10px;
+   
+    
+}   
+
+.select select {
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+        background: linear-gradient(84.8deg, #D913F9 -25.33%, #F3C760 100.79%);
+        opacity: 0.8;
+        -webkit-transform: skew(-25deg);
+       
+    }
+    
+        .select select:hover,
+        .select select:focus {
+           background: #A943AB;   
+        }
