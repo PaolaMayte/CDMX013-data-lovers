@@ -50,13 +50,12 @@ console.log (unique)
 unique.forEach (oneType=> {
     const typeOption = document.createElement('option')
     typeOption.textContent = oneType
-    typeOption.setAttribute(('id', 'oneType'))
     typeSelector.append(typeOption)})
 
-typeSelector.addEventListener('click', typesFilter);
-function typesFilter(){
-    pokemons.filter()
-}
+//typeSelector.addEventListener('click', typesFilter);
+//function typesFilter(){
+//    pokemons.filter()
+//}
 
 //console.log(pokemons.filter(function(item){
 //    return item.type == "type";         
