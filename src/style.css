@@ -85,10 +85,40 @@ nav {
 
 #type{
     font-family: 'Press Start 2P', cursive;
-    color: rgb(27, 26, 26);
+    color:white;
 }
 #region{
     font-family: 'Press Start 2P', cursive;
-    color: rgb(27, 26, 26);
+    color: white;
 }
+
+.select {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 10px;
+   
+    
+}   
+
+.select select {
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+        background: linear-gradient(84.8deg, #D913F9 -25.33%, #F3C760 100.79%);
+        opacity: 0.8;
+        -webkit-transform: skew(-25deg);
+       
+    }
+    
+        .select select:hover,
+        .select select:focus {
+           background: #A943AB;   
+        }
+
+         
+        
 
