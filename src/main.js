@@ -59,4 +59,4 @@ const masterFilter = typeFilter(pokemons, 'fire')
 console.log('poyo', masterFilter)
 
 
-selectType.addEventListener ('change', function(typeFilter))
+
