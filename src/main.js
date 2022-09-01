@@ -1,5 +1,6 @@
 import pokemon from './data/pokemon/pokemon.js'
 import allData from './data/pokemon/pokemon.js'
+import {typeFilter} from './data.js'
 const root = document.getElementById ('root')
 root.classList = 'displayStyle'
 
@@ -36,11 +37,26 @@ const generadorHTML=(pokemon)=>{
 pokemons.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
 
 
-const pokemones= []
-const regionSelector = document.getElementById("region")
-num.forEach(oneRegion =>{
-    const option = document.createElement('option')
-    option.textContent = 'oneRegion';
-
-    regionSelector.appendChild (option)
+const types= []
+const typeSelector = document.getElementById("type")
+pokemons.forEach(onePokemon=>{
+    onePokemon.type.forEach(pokemonType=> types.push(pokemonType))
 })
+let unique = [...new Set(types)];
+console.log (unique)
+unique.forEach (oneType=> {
+    const typeOption = document.createElement('option')
+    typeOption.textContent = oneType
+    typeSelector.append(typeOption)})
+
+// typeSelector.addEventListener('click', typesFilter);
+// function typesFilter(){
+//     pokemons.filter()
+// }
+
+// FILTRO TYPES
+const masterFilter = typeFilter(pokemons, 'fire')
+console.log('poyo', masterFilter)
+
+
+selectType.addEventListener ('change', function(typeFilter))
