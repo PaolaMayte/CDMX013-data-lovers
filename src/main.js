@@ -4,7 +4,7 @@ import {typeFilter} from './data.js'
 const root = document.getElementById ('root')
 root.classList = 'displayStyle'
 
-const pokemons=allData.pokemon
+const pokemonsData=allData.pokemon
 // data.pokemon.forEach(element =>{
 // const card = `<div class="card">
 // <img src="25.png">
@@ -34,12 +34,12 @@ const generadorHTML=(pokemon)=>{
     return div  
 }
 
-pokemons.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
+pokemonsData.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
 
 
 const types= []
-const typeSelector = document.getElementById("type")
-pokemons.forEach(onePokemon=>{
+const typePokemon= document.getElementById("type")
+pokemonsData.forEach(onePokemon=>{
     onePokemon.type.forEach(pokemonType=> types.push(pokemonType))
 })
 let unique = [...new Set(types)];
@@ -47,16 +47,20 @@ console.log (unique)
 unique.forEach (oneType=> {
     const typeOption = document.createElement('option')
     typeOption.textContent = oneType
-    typeSelector.append(typeOption)})
+    typeOption.value=oneType
+    typePokemon.append(typeOption)})
 
 // typeSelector.addEventListener('click', typesFilter);
 // function typesFilter(){
-//     pokemons.filter()
+//     pokemonsData.filter()
 // }
 
 // FILTRO TYPES
-const masterFilter = typeFilter(pokemons, 'fire')
+const masterFilter = typeFilter(pokemonsData, 'fire')
 console.log('poyo', masterFilter)
 
-
-
+typePokemon.addEventListener('change',(event)=>{
+    root.innerHTML=''
+typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
+    console.log (typeFilter (pokemonsData,event.target.value))
+})
