@@ -92,8 +92,13 @@ nav {
     color: white;
 }
 
+#statistics{
+    font-family: 'Press Start 2P', cursive;
+    font-size: .7rem;
+    color: white;
+}
+
 .select {
-    position: relative;
     display: flex;
     flex-direction: row;
     width: 100%;

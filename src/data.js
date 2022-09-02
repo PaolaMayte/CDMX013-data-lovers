@@ -11,14 +11,14 @@ function typeFilter (pokemons, type){
 }
 
 function regionFilter (pokemons, region){
+    console.log(pokemons)
+    console.log(region)
+    
+ 
     const regionResult = pokemons.filter( (pokemon)=>{
-        if (pokemon.generation.name.includes(region)){
-            return true
-        }
-        else {
-            return false
-        }
+       return pokemon.generation.name===region
     })
+    console.log (regionResult)
     return regionResult
 }
 export {typeFilter, regionFilter}
