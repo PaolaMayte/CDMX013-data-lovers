@@ -1,22 +1,17 @@
+//importando data de otros archivos
 import pokemon from './data/pokemon/pokemon.js'
 import allData from './data/pokemon/pokemon.js'
-import {typeFilter} from './data.js'
+import {regionFilter, typeFilter} from './data.js'
+
+//declarando la constante del elemento donde de van a imprimir las tajetas en nuestro HTML
 const root = document.getElementById ('root')
-root.classList = 'displayStyle'
+root.classList = 'displayStyle' //añade formato al elemento para mostrarlo en grid
 
-const pokemonsData=allData.pokemon
-// data.pokemon.forEach(element =>{
-// const card = `<div class="card">
-// <img src="25.png">
-// <h3>nombre</h3> 
-// </div>`
-// main.append (card)
-// })
+const pokemonsData=allData.pokemon //metiendo la data en una constante para nuestras funciones
 
-// crear tarjeta
-
+// declarando una constante que contenga nuestra función para crear tarjetas e imprimirlas en pantalla
 const generadorHTML=(pokemon)=>{
-    const div = document.createElement('div')
+    const div = document.createElement('div') // declarando una constante que crea un div en el HTML
     div.classList='card'
 
     const img = document.createElement('img')
@@ -30,25 +25,25 @@ const generadorHTML=(pokemon)=>{
     const name = document.createElement('h3')
     name.textContent = pokemon.name
     
-    div.append(num,img,name)
+    div.append(num,img,name) //anexando las constantes creadas para el contenido de la tarjeta a l div que estamos creando
     return div  
 }
 
+//convocando la función del generador de tarjetas para imprimir todos los pokemones contenidos en la data
 pokemonsData.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
 
 
 const types= []
-const typePokemon= document.getElementById("type")
+const typeSelector= document.getElementById("type")
 pokemonsData.forEach(onePokemon=>{
     onePokemon.type.forEach(pokemonType=> types.push(pokemonType))
 })
-let unique = [...new Set(types)];
-console.log (unique)
+let unique = [...new Set(types)]; // eliminando los elementos repetidos del array de tipos
 unique.forEach (oneType=> {
     const typeOption = document.createElement('option')
     typeOption.textContent = oneType
     typeOption.value=oneType
-    typePokemon.append(typeOption)})
+    typeSelector.append(typeOption)})
 
 // typeSelector.addEventListener('click', typesFilter);
 // function typesFilter(){
@@ -56,11 +51,29 @@ unique.forEach (oneType=> {
 // }
 
 // FILTRO TYPES
-const masterFilter = typeFilter(pokemonsData, 'fire')
-console.log('poyo', masterFilter)
+const pokeTypes = typeFilter(pokemonsData, types)
+console.log('poyo', pokeTypes)
 
-typePokemon.addEventListener('change',(event)=>{
+typeSelector.addEventListener('change',(event)=>{
     root.innerHTML=''
 typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
     console.log (typeFilter (pokemonsData,event.target.value))
+})
+
+//Filtro de región
+const region = []
+const regionSelector = document.getElementById('region')
+pokemonsData.forEach(onePokemon=>{
+    pokemonsData.region.forEach(pokemonRegion=> region.push(pokemonRegion))
+    console.log(region)
+})
+
+console.log(regionSelector)
+const pokeRegion = regionFilter(pokemonsData, region)
+console.log('repoyon', pokeRegion)
+
+regionSelector.addEventListener('change', (event)=>{
+    root.innerHTML=''
+    regionFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
+    console.log(regionFilter(pokemonsData, event.target.value))
 })
