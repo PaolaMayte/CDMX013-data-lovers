@@ -20,7 +20,7 @@ header{
     width: 100%;
     margin-left: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     gap: 120px;
     padding:20px;
 
@@ -97,7 +97,7 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    column-gap: 10px;
+    column-gap: 40px;
    
     
 }   
