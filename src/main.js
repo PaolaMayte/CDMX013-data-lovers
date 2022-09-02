@@ -61,12 +61,12 @@ typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChil
 })
 
 //Filtro de región
-const region = []
-const regionSelector = document.getElementById('region')
-pokemonsData.forEach(onePokemon=>{
-    pokemonsData.region.forEach(pokemonRegion=> region.push(pokemonRegion))
-    console.log(region)
-})
+ const region = []
+ const regionSelector = document.getElementById('region')
+// pokemonsData.forEach(onePokemon=>{
+//     pokemonsData.region.forEach(pokemonRegion=> region.push(pokemonRegion))
+//     console.log(region)
+// })
 
 console.log(regionSelector)
 const pokeRegion = regionFilter(pokemonsData, region)
@@ -74,6 +74,7 @@ console.log('repoyon', pokeRegion)
 
 regionSelector.addEventListener('change', (event)=>{
     root.innerHTML=''
+    console.log (regionFilter (pokemonsData, event.target.value))
     regionFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
     console.log(regionFilter(pokemonsData, event.target.value))
 })
