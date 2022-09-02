@@ -77,6 +77,3 @@ regionSelector.addEventListener('change', (event)=>{
     regionFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
     console.log(regionFilter(pokemonsData, event.target.value))
 })
-
-
-
