@@ -83,6 +83,3 @@ sortSelector.addEventListener('change', (event)=>{
 sortAZ(pokemonsData)
 })
 console.log(sortAZ(pokemonsData))
-
-
-
