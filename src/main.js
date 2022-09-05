@@ -1,7 +1,7 @@
 //importando data de otros archivos
 import pokemon from './data/pokemon/pokemon.js'
 import allData from './data/pokemon/pokemon.js'
-import {regionFilter, typeFilter} from './data.js'
+import {regionFilter, typeFilter, sortAZ} from './data.js'
 
 //declarando la constante del elemento donde de van a imprimir las tajetas en nuestro HTML
 const root = document.getElementById ('root')
@@ -70,7 +70,7 @@ typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChil
 
 console.log(regionSelector)
 const pokeRegion = regionFilter(pokemonsData, region)
-console.log('repoyon', pokeRegion)
+// console.log('repoyon', pokeRegion)
 
 regionSelector.addEventListener('change', (event)=>{
     root.innerHTML=''
@@ -78,6 +78,11 @@ regionSelector.addEventListener('change', (event)=>{
     regionFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
     console.log(regionFilter(pokemonsData, event.target.value))
 })
+
+sortSelector.addEventListener('change', (event)=>{
+sortAZ(pokemonsData)
+})
+console.log(sortAZ(pokemonsData))
 
 
 

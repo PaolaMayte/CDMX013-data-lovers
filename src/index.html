@@ -12,10 +12,17 @@
       </figure>
     </header>
      <div class="pokedex">
-      <img src="pokedex.png" width="1350"  />
+      <img src="pokedex.png" />
     </div>
   <main>
     <nav>
+      <div class="sort">
+        <select id="sort">
+          <option hidden selected>Sort</option>
+          <option id="az" value="az">A-Z</option>
+          <option id="za" value="za">Z-A</option>
+      </select>  
+      </div>
       <div class="select">
         <select id="region">
             <option hidden selected>Region</option>
@@ -25,11 +32,8 @@
           <select id="type">
               <option hidden selected>Type</option>
           </select>  
-          <select id="statistics">
-            <option hidden selected>Statistics</option>
-            <option id="op2" value="op1">Option 1</option>
-            <option id="op1" value="op2">Option 2</option>
-        </select>    
+          <button class='statsButton' id="stats">Stats
+          </button>  
       </div>
     </nav>
     <div id="root"></div>
