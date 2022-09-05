@@ -11,8 +11,8 @@ function typeFilter (pokemons, type){
 }
 
 function regionFilter (pokemons, region){
-    console.log(pokemons)
-    console.log(region)
+    // console.log(pokemons)
+    // console.log(region)
     
  
     const regionResult = pokemons.filter( (pokemon)=>{
@@ -21,4 +21,12 @@ function regionFilter (pokemons, region){
     console.log (regionResult)
     return regionResult
 }
-export {typeFilter, regionFilter}
+
+function sortAZ (pokemons){
+    const pokeNames = pokemons.sort((onePokemon, twoPokemon)=>{
+        return onePokemon.name.localeCompare(twoPokemon.name)
+    })
+return pokeNames
+}
+
+export {typeFilter, regionFilter, sortAZ}

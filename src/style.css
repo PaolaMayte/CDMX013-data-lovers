@@ -16,6 +16,10 @@ header{
     top: 120px; 
 }
 
+.pokedex img{
+    width: 1350px;
+}
+
 .displayStyle {
     width: 100%;
     margin-left: 50px;
@@ -35,12 +39,14 @@ header{
   border-radius: 5px;
   text-align: center;
   -webkit-transform: skew(-25deg);
-  /* -moz-transform: skew(25deg);
-  -o-transform: skew(25deg);  */
+  -moz-transform: skew(-25deg);
+  -o-transform: skew(-25deg);  
 }
 
 .pokemon {
     -webkit-transform: skew(25deg);
+    -moz-transform: skew(25deg);
+  -o-transform: skew(25deg);  
 }
 
 
@@ -83,43 +89,99 @@ nav {
     margin-top: -130px;
 }
 
+.sort {
+    display: flex;
+    position:absolute;
+    margin-left: 25px;
+    margin-top: -115px;
+}
+
+#sort{
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: 0;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    background: linear-gradient(84.8deg, #D913F9 -25.33%, #F3C760 100.79%);
+    opacity: 0.8;
+    -webkit-transform: skew(-25deg);
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}  
+
+#sort:hover {
+    background:  rgba(124, 97, 194, 0.7);
+         opacity: 0.8;
+        box-shadow:  4px 4px 6px 0 #35013d,
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
 #type{
     font-family: 'Press Start 2P', cursive;
     color:white;
-}
-#region{
-    font-family: 'Press Start 2P', cursive;
-    color: white;
+    padding: 10px 10px;
 }
 
-#statistics{
+#region{
     font-family: 'Press Start 2P', cursive;
-    font-size: .7rem;
+    font-size: .78rem;
     color: white;
+    padding: 10px 15px;
+
 }
+
 
 .select {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    column-gap: 40px;
-   
-    
+    column-gap: 40px;   
 }   
 
 .select select {
+        border: none;
         width: 100%;
         cursor: pointer;
-        padding: 10px 5px;
-        outline: 0;
         box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
         background: linear-gradient(84.8deg, #D913F9 -25.33%, #F3C760 100.79%);
         opacity: 0.8;
-        -webkit-transform: skew(-25deg);
-       
+        -webkit-transform: skew(-25deg);   
     }
     
-        .select select:hover,
-        .select select:focus {
-           background: #A943AB;   
+    
+        .select select:hover {
+            background:  rgba(105, 62, 138, 0.7);
+            opacity: 0.8;
+            opacity: 0.8;
+            box-shadow:  4px 4px 6px 0 #35013d,
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+          
         }
+
+         
+ .statsButton {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 5px;
+    outline: 0;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    background: linear-gradient(84.8deg, #D913F9 -25.33%, #F3C760 100.79%);
+    opacity: 0.8;
+    -webkit-transform: skew(-25deg);
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}  
+
+  .statsButton:hover {
+        background:  rgba(124, 97, 194, 0.7);
+         opacity: 0.8;
+        box-shadow:  4px 4px 6px 0 #35013d,
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
