@@ -1,5 +1,5 @@
 //importando data de otros archivos
-import pokemon from './data/pokemon/pokemon.js'
+//import pokemon from './data/pokemon/pokemon.js'
 import allData from './data/pokemon/pokemon.js'
 import {regionFilter, typeFilter, sortAZ} from './data.js'
 
@@ -35,6 +35,8 @@ pokemonsData.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
 
 const types= []
 const typeSelector= document.getElementById("type")
+const regionSelector = document.getElementById('region')
+
 pokemonsData.forEach(onePokemon=>{
     onePokemon.type.forEach(pokemonType=> types.push(pokemonType))
 })
@@ -51,38 +53,40 @@ unique.forEach (oneType=> {
 // }
 
 // FILTRO TYPES
-const pokeTypes = typeFilter(pokemonsData, types)
-console.log('poyo', pokeTypes)
+//const pokeTypes = typeFilter(pokemonsData, types)
 
 typeSelector.addEventListener('change',(event)=>{
     root.innerHTML=''
-typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
-    console.log (typeFilter (pokemonsData,event.target.value))
+    regionSelector.selectedIndex = 0
+typeFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
 })
 
 //Filtro de región
- const region = []
- const regionSelector = document.getElementById('region')
+
 // pokemonsData.forEach(onePokemon=>{
 //     pokemonsData.region.forEach(pokemonRegion=> region.push(pokemonRegion))
 //     console.log(region)
 // })
 
-console.log(regionSelector)
-const pokeRegion = regionFilter(pokemonsData, region)
+//console.log(regionSelector)
+//const pokeRegion = regionFilter(pokemonsData, region)
 // console.log('repoyon', pokeRegion)
 
 regionSelector.addEventListener('change', (event)=>{
     root.innerHTML=''
-    console.log (regionFilter (pokemonsData, event.target.value))
+    typeSelector.selectedIndex = 0
     regionFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
-    console.log(regionFilter(pokemonsData, event.target.value))
 })
 
+const sortSelector = document.getElementById('sort')
 sortSelector.addEventListener('change', (event)=>{
-sortAZ(pokemonsData)
+    const value = event.target.value
+    const sortedItems = sortAZ(pokemonsData, event.target)
+    root.innerHTML=''
+    if (value === 'az'){
+        sortedItems.forEach(onePokemon => root.appendChild(generadorHTML(onePokemon)))
+    }
+    if (value === 'za'){
+        sortedItems.reverse().forEach(onePokemon => root.appendChild(generadorHTML(onePokemon)))
+    }    
 })
-console.log(sortAZ(pokemonsData))
-
-
-
