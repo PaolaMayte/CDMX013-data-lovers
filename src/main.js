@@ -1,5 +1,4 @@
 //importando data de otros archivos
-//import pokemon from './data/pokemon/pokemon.js'
 import allData from './data/pokemon/pokemon.js'
 import {regionFilter, typeFilter, sortAZ} from './data.js'
 
@@ -36,7 +35,6 @@ pokemonsData.forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
 const types= []
 const typeSelector= document.getElementById("type")
 const regionSelector = document.getElementById('region')
-
 pokemonsData.forEach(onePokemon=>{
     onePokemon.type.forEach(pokemonType=> types.push(pokemonType))
 })
@@ -53,24 +51,22 @@ unique.forEach (oneType=> {
 // }
 
 // FILTRO TYPES
-//const pokeTypes = typeFilter(pokemonsData, types)
+const pokeTypes = typeFilter(pokemonsData, types)
+console.log('poyo', pokeTypes)
 
 typeSelector.addEventListener('change',(event)=>{
     root.innerHTML=''
-    regionSelector.selectedIndex = 0
-typeFilter (pokemonsData, event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
+typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
+    console.log (typeFilter (pokemonsData,event.target.value))
 })
 
-//Filtro de región
+
 
 // pokemonsData.forEach(onePokemon=>{
 //     pokemonsData.region.forEach(pokemonRegion=> region.push(pokemonRegion))
 //     console.log(region)
 // })
 
-//console.log(regionSelector)
-//const pokeRegion = regionFilter(pokemonsData, region)
-// console.log('repoyon', pokeRegion)
 
 regionSelector.addEventListener('change', (event)=>{
     root.innerHTML=''
@@ -90,3 +86,4 @@ sortSelector.addEventListener('change', (event)=>{
         sortedItems.reverse().forEach(onePokemon => root.appendChild(generadorHTML(onePokemon)))
     }    
 })
+
