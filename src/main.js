@@ -56,6 +56,7 @@ console.log('poyo', pokeTypes)
 
 typeSelector.addEventListener('change',(event)=>{
     root.innerHTML=''
+    regionSelector.selectedIndex = 0
 typeFilter (pokemonsData,event.target.value).forEach(onePokemon=>root.appendChild(generadorHTML(onePokemon)))
     console.log (typeFilter (pokemonsData,event.target.value))
 })
