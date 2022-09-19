@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <figure>
-        <img src="pokeverse.png"  width="295" height="265"/>
-      </figure>
-    </header>
-     <div class="pokedex">
-      <img src="pokedex.png" />
-    </div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <figure>
+      <img src="pokeverse.png" width="295" height="265" />
+    </figure>
+  </header>
+  <div class="pokedex">
+    <img src="pokedex.png" />
+  </div>
   <main>
     <nav>
       <div class="sort">
@@ -21,23 +23,24 @@
           <option hidden selected>Sort</option>
           <option id="az" value="az">A-Z</option>
           <option id="za" value="za">Z-A</option>
-      </select>  
+        </select>
       </div>
       <div class="select">
         <select id="region">
-            <option hidden selected>Region</option>
-            <option id="Kanto" value="kanto">Kanto</option>
-            <option id="Johto" value="johto">Johto</option>
-        </select>  
-          <select id="type">
-              <option hidden selected>Type</option>
-          </select>  
-          <button class='statsButton' id="stats">Stats
-          </button>  
+          <option hidden selected>Region</option>
+          <option id="Kanto" value="kanto">Kanto</option>
+          <option id="Johto" value="johto">Johto</option>
+        </select>
+        <select id="type">
+          <option hidden selected>Type</option>
+        </select>
+        <button class="statsButton" id="stats">Stats
+        </button>
       </div>
     </nav>
     <div id="root"></div>
   </main>
-    <script src="main.js" type="module"></script>
-  </body>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
