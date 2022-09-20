@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <figure>
-        <img src="pokeverse.png"  width="295" height="265"/>
-      </figure>
-    </header>
-     <div class="pokedex">
-      <img src="pokedex.png" />
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <figure>
+      <img src="pokeverse.png" width="295" height="265" />
+    </figure>
+  </header>
+  <div class="pokedex">
+    <img src="pokedex.png" />
+  </div>
+  <nav>
+    <div class="nav1">
+      <select id="sort">
+        <option hidden selected>Sort</option>
+        <option id="az" value="az">A-Z</option>
+        <option id="za" value="za">Z-A</option>
+        <option id="number" value="number">by number</option>
+      </select>
+      <button class="statsButton" id="stats">Stats
+      </button>
     </div>
+    <div class="nav2">
+      <select id="region">
+        <option hidden selected>Region</option>
+        <option id="Kanto" value="kanto">Kanto</option>
+        <option id="Johto" value="johto">Johto</option>
+      </select>
+      <select id="type">
+        <option hidden selected>Type</option>
+      </select>
+    </div>
+  </nav>
   <main>
-    <nav>
-      <div class="sort">
-        <select id="sort">
-          <option hidden selected>Sort</option>
-          <option id="az" value="az">A-Z</option>
-          <option id="za" value="za">Z-A</option>
-      </select>  
-      </div>
-      <div class="select">
-        <select id="region">
-            <option hidden selected>Region</option>
-            <option id="Kanto" value="kanto">Kanto</option>
-            <option id="Johto" value="johto">Johto</option>
-        </select>  
-          <select id="type">
-              <option hidden selected>Type</option>
-          </select>  
-          <button class="statsButton" id="stats">Stats
-          </button>  
-      </div>
-    </nav>
     <div id="root"></div>
   </main>
-    <script src="main.js" type="module"></script>
-  </body>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
